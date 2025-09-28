@@ -1,0 +1,81 @@
+Day13Question1
+
+#include <stdio.h>
+
+int main() {
+    char operator;
+    int num1, num2;
+    float result;
+
+    
+    printf("Enter an operator (+, -, *, /, %): ");
+    scanf(" %c", &operator);  // space before %c to consume any leftover newline
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            printf("Result: %d + %d = %.2f\n", num1, num2, result);
+            break;
+
+        case '-':
+            result = num1 - num2;
+            printf("Result: %d - %d = %.2f\n", num1, num2, result);
+            break;
+
+        case '*':
+            result = num1 * num2;
+            printf("Result: %d * %d = %.2f\n", num1, num2, result);
+            break;
+
+        case '/':
+            if (num2 == 0) {
+                printf("Error: Division by zero is not allowed.\n");
+            } else {
+                result = (float)num1 / num2;
+                printf("Result: %d / %d = %.2f\n", num1, num2, result);
+            }
+            break;
+
+        case '%':
+            if (num2 == 0) {
+                printf("Error: Modulus by zero is not allowed.\n");
+            } else {
+                printf("Result: %d %% %d = %d\n", num1, num2, num1 % num2);
+            }
+            break;
+
+        default:
+            printf("Invalid operator!\n");
+    }
+
+    return 0;
+}
+
+Day13Question2
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+    
+    printf("Enter a positive integer n: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 0;
+    }
+
+    
+    for (i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    return 0;
+}
+
