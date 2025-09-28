@@ -1,0 +1,52 @@
+Day5Question1
+#include <stdio.h>
+#include <math.h>  // Required for the pow() function
+
+int main() {
+    float principal, rate, time;
+    float simpleInterest, compoundInterest;
+
+    // Input principal, rate, and time
+    printf("Enter the principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter the annual interest rate (in %%): ");
+    scanf("%f", &rate);
+
+    printf("Enter the time (in years): ");
+    scanf("%f", &time);
+
+    // Calculate Simple Interest
+    simpleInterest = (principal * rate * time) / 100;
+
+    // Calculate Compound Interest
+    compoundInterest = principal * pow((1 + rate / 100), time) - principal;
+
+    // Display the results
+    printf("\n--- Interest Calculations ---\n");
+    printf("Simple Interest: %.2f\n", simpleInterest);
+    printf("Compound Interest: %.2f\n", compoundInterest);
+
+    return 0;
+}
+
+Day5Question2
+#include <stdio.h>
+
+int main() {
+    int totalSeconds, hours, minutes, seconds;
+
+    // Input total seconds
+    printf("Enter time in seconds: ");
+    scanf("%d", &totalSeconds);
+
+    // Convert to hours, minutes, and seconds
+    hours = totalSeconds / 3600;
+    minutes = (totalSeconds % 3600) / 60;
+    seconds = totalSeconds % 60;
+
+    // Display the result
+    printf("Time = %02d:%02d:%02d\n", hours, minutes, seconds);
+
+    return 0;
+}
