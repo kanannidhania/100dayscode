@@ -1,0 +1,48 @@
+Day3Question1
+#include <stdio.h>
+
+int main() {
+    float celsius, fahrenheit;
+
+    
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &celsius);
+
+    
+    fahrenheit = (celsius * 9 / 5) + 32;
+
+    
+    printf("Temperature in Fahrenheit: %.2f\n", fahrenheit);
+
+    return 0;
+}
+
+Day3Question2
+#include <stdio.h>
+
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+
+    // Input two numbers
+    printf("Enter the first number (a): ");
+    scanf("%d", &a);
+
+    printf("Enter the second number (b): ");
+    scanf("%d", &b);
+
+    // Display before swapping
+    printf("\nBefore swapping: a = %d, b = %d\n", a, b);
+
+    // Swapping using a third variable
+    temp = a;
+    a = b;
+    b = temp;
+
+    // Display after swapping
+    printf("After swapping: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
