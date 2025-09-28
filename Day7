@@ -1,0 +1,59 @@
+Day7Question1
+#include <stdio.h>
+
+int main() {
+    int year;
+
+    
+    printf("Enter a year: ");
+    scanf("%d", &year);
+
+    
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                printf("%d is a leap year.\n", year);
+            } else {
+                printf("%d is not a leap year.\n", year);
+            }
+        } else {
+            printf("%d is a leap year.\n", year);
+        }
+    } else {
+        printf("%d is not a leap year.\n", year);
+    }
+
+    return 0;
+}
+
+Day7Question2
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    
+    printf("Enter an alphabet: ");
+    scanf(" %c", &ch);  // Note the space before %c to consume any leftover newline
+
+    
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        // Convert uppercase to lowercase for easier comparison (optional)
+        if (ch >= 'A' && ch <= 'Z') {
+            ch = ch + 32;
+        }
+
+        
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            printf("%c is a vowel.\n", ch);
+        } else {
+            printf("%c is a consonant.\n", ch);
+        }
+    } else {
+        printf("Invalid input! Please enter an alphabet.\n");
+    }
+
+    return 0;
+}
+
