@@ -1,0 +1,68 @@
+Day15Question1
+
+#include <stdio.h>
+
+void printBinary(unsigned int num) {
+    if (num > 1) {
+        printBinary(num / 2);
+    }
+    printf("%d", num % 2);
+}
+
+int main() {
+    int num;
+
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 0;
+    }
+
+    printf("Binary representation of %d is: ", num);
+
+    if (num == 0)
+        printf("0");
+    else
+        printBinary((unsigned int)num);
+
+    printf("\n");
+
+    return 0;
+}
+
+
+Day16Question2
+
+#include <stdio.h>
+
+int main() {
+    int num, originalNum, reversed = 0, remainder;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    originalNum = num;
+
+    
+    if (num < 0) {
+        num = -num;
+        originalNum = num; // To check palindrome for absolute value
+    }
+
+    
+    while (num != 0) {
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+        num /= 10;
+    }
+
+    if (reversed == originalNum) {
+        printf("The number %d is a palindrome.\n", originalNum);
+    } else {
+        printf("The number %d is not a palindrome.\n", originalNum);
+    }
+
+    return 0;
+}
