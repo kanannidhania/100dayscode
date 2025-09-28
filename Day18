@@ -1,0 +1,55 @@
+Day18Question1
+
+  #include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    if (num == 0) {
+        printf("Every number is a factor of 0.\n");
+        return 0;
+    }
+
+    printf("Factors of %d are: ", num);
+
+    int absNum = (num < 0) ? -num : num; 
+
+    for (int i = 1; i <= absNum; i++) {
+        if (absNum % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+
+Day18Question2
+
+  #include <stdio.h>
+
+int main() {
+    int a, b, temp;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+
+    
+    if (a < 0) a = -a;
+    if (b < 0) b = -b;
+
+    
+    while (b != 0) {
+        temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    printf("HCF (GCD) is %d\n", a);
+
+    return 0;
+}
+
