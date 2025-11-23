@@ -1,0 +1,58 @@
+Day 22 Question 1
+#include <stdio.h>
+
+int main() {
+    int num, temp, digit, fact, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    temp = num;
+
+    while (temp > 0) {
+        digit = temp % 10;
+
+        fact = 1;
+        for (int i = 1; i <= digit; i++) {
+            fact *= i;
+        }
+
+        sum += fact;
+        temp /= 10;
+    }
+
+    if (sum == num)
+        printf("%d is a Strong number.\n", num);
+    else
+        printf("%d is not a Strong number.\n", num);
+
+    return 0;
+}
+
+Day 22 Question 2
+#include <stdio.h>
+
+int main() {
+    int n;
+    float sum = 0.0;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    int num = 1, den = 1;
+
+    for (int i = 1; i <= n; i++) {
+        sum += (float)num / den;
+
+        num += 2;     
+
+        if (i == 1)
+            den = 4;   
+        else
+            den += 2; 
+    }
+
+    printf("Sum of the series = %.4f\n", sum);
+
+    return 0;
+}
