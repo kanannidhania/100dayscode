@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+// Define the enumeration with explicit, non-consecutive values
+enum Status {
+    SUCCESS = 10,
+    FAILURE = 20,
+    TIMEOUT = 30
+};
+
+// Function to print a message based on the status enum
+void printStatusMessage(enum Status status) {
+    printf("Operation Result: ");
+    
+    // Use a switch statement to check the enum value
+    switch (status) {
+        case SUCCESS:
+            printf("SUCCESS (Value: %d)\n", SUCCESS);
+            printf("Message: The operation completed **successfully**.\n");
+            break;
+            
+        case FAILURE:
+            printf("FAILURE (Value: %d)\n", FAILURE);
+            printf("Message: The operation **failed** due to an internal error.\n");
+            break;
+            
+        case TIMEOUT:
+            printf("TIMEOUT (Value: %d)\n", TIMEOUT);
+            printf("Message: The operation **exceeded its time limit** and aborted.\n");
+            break;
+            
+        default:
+            printf("UNKNOWN (Value: %d)\n", status);
+            printf("Message: An unknown status was returned.\n");
+            break;
+    }
+}
+
+int main() {
+    printf("--- Testing SUCCESS (10) ---\n");
+    enum Status status1 = SUCCESS;
+    printStatusMessage(status1);
+
+    printf("\n--- Testing FAILURE (20) ---\n");
+    enum Status status2 = FAILURE;
+    printStatusMessage(status2);
+    
+    printf("\n--- Testing TIMEOUT (30) ---\n");
+    enum Status status3 = TIMEOUT;
+    printStatusMessage(status3);
+
+    return 0;
+}
