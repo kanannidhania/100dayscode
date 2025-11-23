@@ -1,0 +1,52 @@
+#include <stdio.h>
+enum UserRole {
+    GUEST = 0, 
+    USER,     
+    ADMIN     
+};
+
+ {
+    printf("\n--- Role: ");
+    
+  {
+        case ADMIN:
+            printf("ADMIN ---\n");
+            printf("Access Level: **Full**\n");
+            printf("* Can manage users and system settings.\n");
+            printf("* Can access all data and features.\n");
+            break;
+            
+        case USER:
+            printf("USER ---\n");
+            printf("Access Level: **Standard**\n");
+            printf("* Can create and manage their own data.\n");
+            printf("* Can view public data and specific features.\n");
+            break;
+            
+        case GUEST:
+            printf("GUEST ---\n");
+            printf("Access Level: **Limited**\n");
+            printf("* Can only view public information.\n");
+            printf("* Cannot modify or create any data.\n");
+            break;
+            
+        default:
+            printf("UNKNOWN ---\n");
+            printf("Access Level: Undefined\n");
+            printf("* Role could not be recognized.\n");
+            break;
+    }
+}
+
+int main() {
+    enum UserRole role1 = ADMIN;
+    displayAccess(role1);
+
+    enum UserRole role2 = USER;
+    displayAccess(role2);
+    
+    enum UserRole role3 = GUEST;
+    displayAccess(role3);
+
+    return 0;
+}
