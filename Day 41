@@ -1,0 +1,34 @@
+Day 41 Question 1
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int count = 0;
+
+    fgets(str, sizeof(str), stdin);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] != '\n') // ignore newline character
+            count++;
+    }
+
+    printf("Number of characters = %d\n", count);
+
+    return 0;
+}
+
+Day 42 Question 2
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    fgets(str, sizeof(str), stdin);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] != '\n')
+            printf("%c\n", str[i]);
+    }
+
+    return 0;
+}
