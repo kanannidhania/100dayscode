@@ -1,0 +1,37 @@
+#include <stdio.h>
+enum Day {
+    SUNDAY,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    
+    DAYS_COUNT 
+};
+
+    switch (day) {
+        case SUNDAY:    return "SUNDAY";
+        case MONDAY:    return "MONDAY";
+        case TUESDAY:   return "TUESDAY";
+        case WEDNESDAY: return "WEDNESDAY";
+        case THURSDAY:  return "THURSDAY";
+        case FRIDAY:    return "FRIDAY";
+        case SATURDAY:  return "SATURDAY";
+        default:        return "UNKNOWN";
+    }
+}
+
+int main() {
+    printf("Day Enumeration and Integer Values:\n");
+    printf("-----------------------------------\n");
+
+    for (int i = SUNDAY; i < DAYS_COUNT; ++i) {
+       
+        enum Day current_day = (enum Day)i;
+        printf("%s: %d\n", getDayName(current_day), i);
+    }
+
+    return 0;
+}
