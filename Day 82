@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+enum TrafficLight {
+    RED,
+    YELLOW,
+    GREEN
+};
+
+void printInstruction(enum TrafficLight light) {
+    printf("The current light is: ");
+    
+    switch (light) {
+        case RED:
+            printf("RED\n");
+            printf("Instruction: **Stop**\n");
+            break;
+            
+        case YELLOW:
+            printf("YELLOW\n");
+            printf("Instruction: **Wait**\n");
+            break;
+            
+        case GREEN:
+            printf("GREEN\n");
+            printf("Instruction: **Go**\n");
+            break;
+            
+        default:
+            printf("UNKNOWN\n");
+            printf("Instruction: Invalid light value.\n");
+            break;
+    }
+}
+
+int main() {
+    enum TrafficLight currentLight = GREEN;
+    
+    printInstruction(currentLight);
+
+    printf("\n");
+
+    currentLight = YELLOW;
+    printInstruction(currentLight);
+    
+    printf("\n");
+
+    currentLight = RED;
+    printInstruction(currentLight);
+
+    return 0;
+}
