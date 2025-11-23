@@ -1,0 +1,49 @@
+Day 37 Question 1
+#include <stdio.h>
+
+int main() {
+    int rows, cols;
+
+    scanf("%d %d", &rows, &cols);
+    int matrix[rows][cols];
+    int rowSum[rows];
+
+    for (int i = 0; i < rows; i++) {
+        rowSum[i] = 0;
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+            rowSum[i] += matrix[i][j];
+        }
+    }
+
+    for (int i = 0; i < rows; i++)
+        printf("Sum of row %d = %d\n", i + 1, rowSum[i]);
+
+    return 0;
+}
+
+Day 37 Question 2
+#include <stdio.h>
+
+int main() {
+    int rows, cols;
+
+    scanf("%d %d", &rows, &cols);
+    int matrix[rows][cols], transpose[cols][rows];
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
