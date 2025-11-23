@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int roll_no;
+    float marks;
+};
+
+void printStudentDetails(struct Student s) {
+    printf("--- Printing Student Details ---\n");
+    printf("Name: %s\n", s.name);
+    printf("Roll Number: %d\n", s.roll_no);
+    printf("Marks: %.2f\n", s.marks);
+    printf("------------------------------\n");
+}
+
+int main() {
+    struct Student alice = {"Alice Smith", 101, 95.50};
+
+    printStudentDetails(alice);
+    
+    struct Student bob = {"Bob Johnson", 102, 88.75};
+
+    printStudentDetails(bob);
+
+    return 0;
+}
