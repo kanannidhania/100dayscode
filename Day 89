@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+{
+    RED = 100,     
+    GREEN = 50,     
+    BLUE = 200,   
+    YELLOW = 51,   
+    PURPLE         
+};
+
+int main() {
+    printf("Enum Demonstrating Integer Storage:\n");
+    printf("-----------------------------------\n");
+
+    printf("RED:    %d\n", RED);
+    printf("GREEN:  %d\n", GREEN);
+    printf("BLUE:   %d\n", BLUE);
+    printf("YELLOW: %d\n", YELLOW);
+    printf("PURPLE: %d\n", PURPLE);
+
+    return 0;
+}
