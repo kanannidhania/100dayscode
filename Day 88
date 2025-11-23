@@ -1,0 +1,30 @@
+#include <stdio.h>
+enum UserRole {
+    GUEST = 0;
+    USER,     
+    ADMIN,     
+    ROLE_COUNT 
+};
+
+{
+    switch (role) {
+        case GUEST:  return "GUEST";
+        case USER:   return "USER";
+        case ADMIN:  return "ADMIN";
+        default:     return "UNKNOWN";
+    }
+}
+
+int main() {
+    printf("User Role Enumeration Names and Values:\n");
+    printf("---------------------------------------\n");
+
+    for (int i = GUEST; i < ROLE_COUNT; ++i) {
+      
+        enum UserRole current_role = (enum UserRole)i;
+      
+        printf("%-7s: %d\n", getRoleName(current_role), i);
+    }
+
+    return 0;
+}
