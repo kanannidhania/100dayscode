@@ -1,0 +1,82 @@
+#include <stdio.h>
+
+// 🗓️ Define the enumeration for the 12 Months
+enum Month {
+    JANUARY = 1, // Start month enumeration at 1 for conventional numbering
+    FEBRUARY,
+    MARCH,
+    APRIL,
+    MAY,
+    JUNE,
+    JULY,
+    AUGUST,
+    SEPTEMBER,
+    OCTOBER,
+    NOVEMBER,
+    DECEMBER,
+    MONTHS_IN_YEAR // This will be 13, useful for loops/arrays
+};
+
+// Function to get the name of the month
+const char* getMonthName(enum Month month) {
+    switch (month) {
+        case JANUARY:   return "JANUARY";
+        case FEBRUARY:  return "FEBRUARY";
+        case MARCH:     return "MARCH";
+        case APRIL:     return "APRIL";
+        case MAY:       return "MAY";
+        case JUNE:      return "JUNE";
+        case JULY:      return "JULY";
+        case AUGUST:    return "AUGUST";
+        case SEPTEMBER: return "SEPTEMBER";
+        case OCTOBER:   return "OCTOBER";
+        case NOVEMBER:  return "NOVEMBER";
+        case DECEMBER:  return "DECEMBER";
+        default:        return "UNKNOWN";
+    }
+}
+
+// Function to determine the standard number of days in a month
+int getDaysInMonth(enum Month month) {
+    switch (month) {
+        // Months with 31 days
+        case JANUARY:
+        case MARCH:
+        case MAY:
+        case JULY:
+        case AUGUST:
+        case OCTOBER:
+        case DECEMBER:
+            return 31;
+
+        // Months with 30 days
+        case APRIL:
+        case JUNE:
+        case SEPTEMBER:
+        case NOVEMBER:
+            return 30;
+
+        // February (standard 28 days, ignoring leap year logic)
+        case FEBRUARY:
+            return 28;
+            
+        default:
+            return 0; // Should not happen
+    }
+}
+
+int main() {
+    printf("Month Enumeration and Days:\n");
+    printf("---------------------------\n");
+
+    // Loop from JANUARY (1) up to and including DECEMBER (12)
+    for (int i = JANUARY; i < MONTHS_IN_YEAR; ++i) {
+        enum Month currentMonth = (enum Month)i;
+        printf("%-9s (%d): %2d days\n", 
+               getMonthName(currentMonth), 
+               i, 
+               getDaysInMonth(currentMonth));
+    }
+
+    return 0;
+}
