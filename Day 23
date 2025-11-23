@@ -1,0 +1,37 @@
+Day 23 question 1
+  #include <stdio.h>
+
+int main() {
+    int n;
+    float sum = 0.0;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        float num = 2 * i;
+        float den = 4 * i - 1;
+
+        sum += num / den;
+    }
+
+    printf("Sum of the series = %.4f\n", sum);
+
+    return 0;
+}
+
+Day 23 Question 2
+  #include <stdio.h>
+
+int main() {
+    int i, j;
+
+    for (i = 1; i <= 5; i++) {         
+        for (j = 1; j <= 5; j++) {     
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
