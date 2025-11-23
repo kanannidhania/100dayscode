@@ -1,0 +1,55 @@
+#include <stdio.h>
+enum Operation {
+    ADD = 1,      
+    SUBTRACT,   
+    MULTIPLY    
+};
+
+void performOperation(enum Operation op, int a, int b) {
+    int result = 0;
+    
+    printf("\nOperation: ");
+    switch (op) {
+        case ADD:
+            result = a + b;
+            printf("ADDITION\n");
+            printf("%d + %d = %d\n", a, b, result);
+            break;
+            
+        case SUBTRACT:
+            result = a - b;
+            printf("SUBTRACTION\n");
+            printf("%d - %d = %d\n", a, b, result);
+            break;
+            
+        case MULTIPLY:
+            result = a * b;
+            printf("MULTIPLICATION\n");
+            printf("%d * %d = %d\n", a, b, result);
+            break;
+            
+        default:
+            printf("Invalid Operation\n");
+            printf("Error: Unknown menu choice.\n");
+            break;
+    }
+}
+
+int main() {
+    int num1 = 15;
+    int num2 = 5;
+    
+    printf("--- Calculator Operations Using Enum and Switch ---\n");
+    printf("Input numbers: a = %d, b = %d\n", num1, num2);
+
+    enum Operation choice1 = ADD;
+    performOperation(choice1, num1, num2);
+
+    enum Operation choice2 = SUBTRACT;
+    performOperation(choice2, num1, num2);
+    
+    enum Operation choice3 = MULTIPLY;
+    performOperation(choice3, num1, num2);
+
+    return 0;
+}
