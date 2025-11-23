@@ -1,0 +1,39 @@
+Day 45 Question 1
+#include <stdio.h>
+
+int main() {
+    char str[100], ch;
+    int count = 0;
+
+    fgets(str, sizeof(str), stdin);
+    scanf(" %c", &ch);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == ch)
+            count++;
+    }
+
+    printf("Frequency of '%c' = %d\n", ch, count);
+
+    return 0;
+}
+
+Day 45 Question 2
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    fgets(str, sizeof(str), stdin);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z')
+            str[i] = str[i] - ('a' - 'A');
+        else if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] = str[i] + ('a' - 'A');
+    }
+
+    printf("%s", str);
+
+    return 0;
+}
